@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ausbildungsfernsehen Marl – Ausbildung, Medienprojekte und Produktionen.">
+<title>AFM – Ausbildungsfernsehen Marl</title>
+<style>
+:root{--red:#a30d32;--red-dark:#850b29;--ink:#181818;--muted:#666;--line:#dedede;--paper:#fff;--soft:#f7f5f5;--dark:#292326;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;font:16px/1.65 Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper)}a{color:inherit}img{max-width:100%;display:block}
+.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.header-inner{min-height:82px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.brand-logo{width:245px;height:auto;max-height:66px;object-fit:contain;object-position:left center}
+nav{margin-left:auto;display:flex;align-items:center;gap:clamp(13px,2vw,28px)}
+nav a{text-decoration:none;font-size:15px;white-space:nowrap;padding:28px 0;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus{color:var(--red);border-color:var(--red)}
+.menu-toggle{display:none;margin-left:auto;border:1px solid var(--line);background:white;border-radius:6px;padding:9px 12px;font-size:21px;color:var(--red)}
+.hero{min-height:360px;display:flex;align-items:end;color:white;background:linear-gradient(90deg,rgba(25,18,21,.82),rgba(25,18,21,.25)),linear-gradient(135deg,#292326,#6b5156 55%,#30282a);padding:70px 0;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(125deg,transparent 0 95px,rgba(255,255,255,.035) 96px 98px)}
+.hero-content{position:relative;z-index:1;max-width:760px}
+.eyebrow,.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#efc7d1}
+.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.05;margin:12px 0 18px}
+.hero p{font-size:19px;max-width:690px;margin:0}
+section{padding:74px 0;border-bottom:1px solid var(--line)}
+.intro{text-align:center;max-width:820px;margin:0 auto 10px}
+.kicker{color:var(--red);margin-bottom:9px}
+h2{font-size:clamp(29px,4vw,40px);line-height:1.2;font-weight:500;margin:0 0 18px}
+h3{font-size:22px;line-height:1.25;margin:0 0 10px}
+.lead{font-size:18px;color:var(--muted)}
+.muted{color:var(--muted)}
+.grid{display:grid;gap:26px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.person{display:grid;grid-template-columns:minmax(240px,.8fr) 1.4fr;gap:55px;align-items:center}
+.photo{min-height:280px;border-radius:9px;background:linear-gradient(135deg,#e9e1e3,#c7b9bd);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#705e63;border:1px solid #e2dadd}
+.photo small{display:block;font-size:12px;font-weight:400;margin-top:6px}
+.btn{display:inline-block;background:var(--red);color:#fff;padding:12px 20px;border-radius:4px;text-decoration:none;font-weight:700;margin-top:12px;border:0;cursor:pointer}
+.btn:hover{background:var(--red-dark)}
+.history{display:grid;grid-template-columns:1fr 1fr;gap:55px}
+.timeline{border-left:2px solid var(--red);padding-left:25px}
+.event{position:relative;margin:0 0 25px}.event:before{content:"";position:absolute;left:-33px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red);border:3px solid white;box-shadow:0 0 0 1px var(--red)}
+.event strong{color:var(--red);font-size:17px}.event p{margin:4px 0;color:var(--muted)}
+.room-card,.info-card,.news-card{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff}
+.room-card .photo{min-height:210px;border-radius:0;border:0}
+.card-body{padding:22px}.card-body p{margin:0;color:var(--muted)}
+.news-card{padding:24px}.news-card .date{font-size:12px;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.news-card h3{margin-top:8px}
+.number-card{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.number{width:42px;height:42px;background:var(--red);color:white;border-radius:6px;display:grid;place-items:center;font-weight:700}
+.number-card p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.notice{background:var(--soft);border-left:4px solid var(--red);padding:17px 20px;color:var(--muted);font-size:14px;margin-top:26px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px}
+.map-placeholder{min-height:230px;background:linear-gradient(135deg,#eee8e9,#d8ced1);border-radius:8px;display:grid;place-items:center;text-align:center;color:#705e63;padding:20px;margin-top:16px}
+form{border:1px solid var(--line);border-radius:9px;padding:24px}
+label{display:block;font-weight:700;font-size:13px;margin:0 0 6px}
+input,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:5px;font:inherit;margin-bottom:14px}
+textarea{min-height:120px;resize:vertical}
+footer{background:#1c1b1c;color:white;padding:34px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+footer a{color:#eee;text-decoration:none;margin-left:18px}footer a:hover{text-decoration:underline}
+#impressum,#datenschutz{scroll-margin-top:90px}
+@media(max-width:900px){nav{gap:12px}nav a{font-size:13px}.brand-logo{width:205px;max-height:58px}}
+@media(max-width:720px){.header-inner{min-height:72px}.brand-logo{width:190px;max-height:54px}.menu-toggle{display:block}nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 22px 20px;flex-direction:column;align-items:stretch;gap:0}nav.open{display:flex}nav a{padding:12px 0;font-size:16px}.hero{min-height:300px;padding:52px 0}.hero p{font-size:16px}section{padding:52px 0}.two,.three,.person,.history,.contact-grid{grid-template-columns:1fr}.person{gap:24px}.photo{min-height:250px}.history{gap:25px}.wrap{width:min(var(--max),calc(100% - 36px))}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap header-inner">
+  <a class="brand" href="#start" aria-label="AFM Startseite"><img class="brand-logo" src="afm-logo.jpeg" alt="AFM – Ausbildungsfernsehen Marl"></a>
+  <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainnav">☰</button>
+  <nav id="mainnav">
+   <a href="#start">Startseite</a><a href="#ueber-uns">Über uns</a><a href="#ausbildung">Ausbildung</a><a href="#projekte">Partner und Projekte</a><a href="#kontakt">Kontakt</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="start">
+ <div class="wrap hero-content">
+  <div class="eyebrow">Ausbildungsfernsehen Marl</div>
+  <h1>Herzlich Willkommen<br>beim AFM</h1>
+  <p>Ein Ort für Medien, Ideen und echte Praxiserfahrung – vom ersten Konzept bis zum fertigen Beitrag.</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="intro">
+   <div class="kicker">Das ist das AFM</div>
+   <h2>Medien machen. Erfahrungen sammeln. Zusammenarbeiten.</h2>
+   <p class="lead">Das Ausbildungsfernsehen Marl verbindet schulische Bildung mit kreativer Medienarbeit und praxisnahen Einblicken in die Produktion.</p>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap grid two">
+  <div>
+   <div class="kicker">Aktuelles</div><h2>News & Termine</h2>
+   <article class="news-card"><div class="date">Aktuelle Meldungen</div><h3>Was gibt es Neues beim AFM?</h3><p class="muted">Hier können aktuelle Meldungen, Veranstaltungen und Termine des AFM veröffentlicht werden.</p></article>
+  </div>
+  <div>
+   <div class="kicker">Aus dem AFM</div><h2>Presseberichte</h2>
+   <article class="news-card"><div class="date">Presse & Veröffentlichungen</div><h3>Berichte über unsere Arbeit</h3><p class="muted">Hier finden Sie Presseberichte und Veröffentlichungen über unsere Projekte und Aktivitäten.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="ueber-uns">
+ <div class="wrap">
+  <div class="kicker">Das ist das AFM</div><h2>Wir über uns</h2>
+  <div class="person">
+   <div class="photo">Foto Schulleiter<small>Originalporträt hier einsetzen</small></div>
+   <div><div class="kicker">Persönlich für Sie da</div><h3>[Name des Schulleiters]</h3><p><b>Schulleiter / Ansprechpartner</b></p><p class="muted">Ansprechperson für Fragen rund um unsere Arbeit, Projekte und die Zusammenarbeit. Ergänzen Sie hier eine persönliche Vorstellung.</p><a class="btn" href="#kontakt">Kontakt aufnehmen</a></div>
+  </div>
+  <div style="height:55px"></div>
+  <div class="history">
+   <div><div class="kicker">Von den Anfängen bis heute</div><h2>Unsere Geschichte</h2><p class="muted">Vom Offenen Kanal zum AFM: Die Geschichte zeigt, wie sich aus dem offenen Medienangebot das heutige Ausbildungsfernsehen entwickelt hat. Ergänzen Sie hier die bestätigten historischen Stationen und Jahreszahlen.</p></div>
+   <div class="timeline">
+    <div class="event"><strong>Die Anfänge</strong><p>Der Offene Kanal als Ausgangspunkt.</p></div>
+    <div class="event"><strong>Die Entwicklung</strong><p>Der Weg zum Ausbildungsfernsehen Marl.</p></div>
+    <div class="event"><strong>Heute</strong><p>Medienpädagogik, Ausbildung und Produktionen.</p></div>
+   </div>
+  </div>
+  <div style="height:55px"></div>
+  <div class="kicker">Einblicke hinter die Kulissen</div><h2>Unsere Räume & Ausstattung</h2>
+  <div class="grid two">
+   <article class="room-card"><div class="photo">Foto Studio</div><div class="card-body"><h3>Studio</h3><p>Kamera-, Licht- und Aufnahmesituation für Moderationen, Interviews und Studiobeiträge.</p></div></article>
+   <article class="room-card"><div class="photo">Foto Schnittplätze</div><div class="card-body"><h3>Schnittplätze</h3><p>Arbeitsplätze zur Sichtung, Bearbeitung und Fertigstellung von Film- und Videobeiträgen.</p></div></article>
+   <article class="room-card"><div class="photo">Foto Tonkabine</div><div class="card-body"><h3>Tonkabine</h3><p>Raum für Sprachaufnahmen, Kommentare und weitere Tonproduktionen.</p></div></article>
+   <article class="room-card"><div class="photo">Foto Seminarraum</div><div class="card-body"><h3>Seminarraum</h3><p>Platz für Besprechungen, Schulungen, Planung und gemeinsames Lernen.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="ausbildung">
+ <div class="wrap">
+  <div class="kicker">Lernen mit Medien</div><h2>Ausbildung und Schule</h2>
+  <p class="lead">Medienkompetenz, Gestaltung und praktische Erfahrungen – vom Unterricht bis zum eigenen Medienprojekt.</p>
+  <div class="grid three">
+   <article class="room-card"><div class="photo">Bildmotiv GTA-Ausbildung</div><div class="card-body"><h3>GTA-Ausbildung</h3><p>Gestaltungstechnische Assistent:innen Medien & Kommunikation. Die Ausbildung verbindet gestalterische Grundlagen mit Medienproduktion, Kommunikation und praktischer Projektarbeit.</p></div></article>
+   <article class="room-card"><div class="photo">Bildmotiv Berufsfachschule</div><div class="card-body"><h3>Berufsfachschule</h3><p>Kooperation mit der einjährigen Berufsfachschule für Druck- und Medientechnik. Hier werden schulische Inhalte mit Einblicken in medientechnische Arbeitsweisen verbunden.</p></div></article>
+   <article class="room-card"><div class="photo">Bildmotiv Schulprojekt</div><div class="card-body"><h3>Medienpädagogische Projekte</h3><p>Das AFM unterstützt andere Schulen mit medienpädagogischen Projekten und ermöglicht Lernenden, Medien aktiv und kreativ zu nutzen.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="projekte">
+ <div class="wrap">
+  <div class="kicker">Gemeinsam Medien gestalten</div><h2>Projekte, Produktionen und Kooperationen</h2>
+  <p class="lead">Wir begleiten Ideen, unterstützen Medienvorhaben und bringen Menschen und Organisationen zusammen.</p>
+  <div class="grid two">
+   <article class="number-card"><div class="number">01</div><div><h3>Produktionen für Stadt, Vereine und Organisationen</h3><p>Medienproduktionen für lokale Akteur:innen, Vereine und gemeinnützige Initiativen.</p></div></article>
+   <article class="number-card"><div class="number">02</div><div><h3>Studentische Praktikant:innenprojekte & Abschlussarbeiten</h3><p>Möglichkeiten für Studierende, eigene Themen praktisch umzusetzen und medienbezogene Arbeiten zu realisieren.</p></div></article>
+   <article class="number-card"><div class="number">03</div><div><h3>Unterstützung bei Filmtätigkeiten und Ausleihe von Technik</h3><p>Unterstützung bei Filmtätigkeiten und – nach Absprache – Technik-Ausleihe.</p></div></article>
+   <article class="number-card"><div class="number">04</div><div><h3>Angebote für Schulen in der Region</h3><p>Medienpädagogische Angebote und gemeinsame Projekte für Schulen aus der Region.</p></div></article>
+   <article class="number-card"><div class="number">05</div><div><h3>Kooperationen & Netzwerke</h3><p>Zusammenarbeit mit Partnern und regionale Vernetzung rund um Medienbildung und Produktion.</p></div></article>
+   <article class="number-card"><div class="number">06</div><div><h3>Anfragen & Kontaktaufnahme</h3><p>Sie haben eine Projektidee oder möchten mit dem AFM zusammenarbeiten? Nehmen Sie Kontakt mit uns auf.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="kontakt">
+ <div class="wrap">
+  <div class="kicker">Wir freuen uns auf Ihre Nachricht</div><h2>Kontakt</h2>
+  <p class="lead">Sie möchten mehr erfahren, ein Projekt besprechen oder mit dem AFM zusammenarbeiten?</p>
+  <div class="contact-grid">
+   <div>
+    <h3>Adresse & Anfahrt</h3>
+    <div class="news-card"><b>AFM – Ausbildungsfernsehen Marl</b><p class="muted">Standort: Insel im Marler Stern<br>[Straße, PLZ und genaue Raumnummer ergänzen]</p></div>
+    <div class="map-placeholder">Karten- und Anfahrtsbereich<br><small>Hier kann später eine Karte oder ein Lageplan eingebunden werden.</small></div>
+    <div style="height:25px"></div>
+    <h3>Ansprechpartner:innen</h3>
+    <p><b>[Name Ansprechpartner:in 1] · [Funktion]</b><br><span class="muted">[E-Mail] · [Telefon]</span></p>
+    <p><b>[Name Ansprechpartner:in 2] · [Funktion]</b><br><span class="muted">[E-Mail] · [Telefon]</span></p>
+   </div>
+   <div>
+    <h3>Kontaktformular</h3>
+    <form id="contact-form">
+     <label for="name">Name</label><input id="name" name="name" required>
+     <label for="email">E-Mail</label><input id="email" name="email" type="email" required>
+     <label for="subject">Betreff</label><input id="subject" name="subject">
+     <label for="message">Ihre Nachricht</label><textarea id="message" name="message" required></textarea>
+     <button class="btn" type="submit">Nachricht vorbereiten</button>
+     <p class="muted" style="font-size:12px">Das Formular öffnet derzeit Ihr E-Mail-Programm. Für den direkten Versand über die Website ist eine Server- oder Formularanbindung erforderlich.</p>
+     <p id="form-status" role="status" class="muted"></p>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="impressum">
+ <div class="wrap"><div class="kicker">Rechtliches</div><h2>Impressum</h2><p class="muted">Bitte ergänzen Sie hier die vollständigen gesetzlich erforderlichen Angaben zum Betreiber der Website (Name, Rechtsform, Anschrift, Vertretungsberechtigte, Kontakt und gegebenenfalls Register- und Umsatzsteuerangaben). Vor Veröffentlichung rechtlich prüfen lassen.</p></div>
+</section>
+<section id="datenschutz">
+ <div class="wrap"><div class="kicker">Rechtliches</div><h2>Datenschutz</h2><p class="muted">Hier muss eine auf den tatsächlichen Websitebetrieb abgestimmte Datenschutzerklärung eingefügt werden. Berücksichtigen Sie insbesondere Hosting, Server-Logs, Kontaktformular, eingebundene Karten, Cookies und externe Medien. Der Platzhalter ist keine rechtsgültige Datenschutzerklärung.</p></div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap footer-inner">
+  <div><b>AFM – Ausbildungsfernsehen Marl</b><br><span style="color:#c8c2c4">Medien, Ausbildung und Praxis</span></div>
+  <div><a href="#kontakt">Kontakt</a><a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></div>
+ </div>
+</footer>
+<script>
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('#mainnav');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}));
+document.querySelector('#contact-form').addEventListener('submit',e=>{
+ e.preventDefault();
+ const data=new FormData(e.currentTarget);
+ const recipient=''; // Hier die offizielle AFM-E-Mail-Adresse eintragen
+ if(!recipient){document.querySelector('#form-status').textContent='Bitte tragen Sie im HTML-Code die offizielle AFM-E-Mail-Adresse als Empfänger ein, bevor das Formular genutzt wird.';return;}
+ const subject=encodeURIComponent(data.get('subject')||'Kontaktanfrage über die AFM-Website');
+ const body=encodeURIComponent('Name: '+data.get('name')+'\nE-Mail: '+data.get('email')+'\n\n'+data.get('message'));
+ location.href=`mailto:${recipient}?subject=${subject}&body=${body}`;
+});
+</script>
+</body>
+</html>
